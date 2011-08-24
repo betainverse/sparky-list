@@ -1,1 +1,23 @@
 sparky-list is a collection of short scripts that are probably not generally useful, which I have used for manipulating sparky peak list files.
+-------------------------------------------------------------------------------
+comparecolumns.py reads two sparky peaklists, extracts the requested
+columns from each, and aligns them according to residue number and atom.
+Missing values are replaced by 0 or another user-specified symbol.
+-------------------------------------------------------------------------------
+list2excel.py reads a sparky peaklist and reformats it from
+a whitespace-delimted file to a CSV file. It also splits the
+assignment column into 3 columns: amino acid letter, residue
+number, and atoms.
+
+list2excel.py also reads a list of residues to exclude and
+a list of atoms to keep, and prints all lines corresponding
+to excluded residues or unkept atoms at the bottom of the file.
+
+For example,
+
+list2excel.py -i HSQC.list -x 1252 1281 -k N-H
+
+outputs HSQC.csv, with lines corresponding to residues 1252
+and 1281 moved to the bottom, along with any sidechain peaks.
+-------------------------------------------------------------------------------
+
