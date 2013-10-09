@@ -35,6 +35,10 @@ AA["TRP"] = "W"
 AA["TYR"] = "Y"
 AA["VAL"] = "V"
 
+if len(argv) != 2:
+    print "Usage:"
+    print "star2sparky.py input.star > output.list"
+
 infile = argv[1]
 openfile = open(infile,'r')
 filelines = openfile.readlines()

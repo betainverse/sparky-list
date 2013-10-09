@@ -29,7 +29,7 @@ def main():
                 height = float(columns[3])
             except IndexError, e:
                 heights = False
-            if height:
+            if heights:
                 listDict[res]=(Nppm,Hppm,height)
             else:
                 listDict[res]=(Nppm,Hppm)
@@ -39,11 +39,15 @@ def main():
     resnames = [str(res) for res in residues]
     Nlist = [listDict[str(res)][0] for res in residues]
     Hlist = [listDict[str(res)][1] for res in residues]
-    sizes = [listDict[str(res)][2] for res in residues]
-    maxsize = max(sizes)
-    scaledsizes = [100*x/maxsize for x in sizes]
-    pylab.figure()
-    pylab.scatter(Hlist,Nlist,marker='o',s=scaledsizes)
+    if heights:
+        sizes = [listDict[str(res)][2] for res in residues]
+        maxsize = max(sizes)
+        scaledsizes = [100*x/maxsize for x in sizes]
+        pylab.figure()
+        pylab.scatter(Hlist,Nlist,marker='o',s=scaledsizes)
+    else:
+        pylab.figure()
+        pylab.scatter(Hlist,Nlist,marker='o')
     pylab.xlabel("$\omega$ H (ppm)")
     pylab.ylabel("$\omega$ N (ppm)")
     axes = pylab.gca()
