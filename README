@@ -21,3 +21,8 @@ outputs HSQC.csv, with lines corresponding to residues 1252
 and 1281 moved to the bottom, along with any sidechain peaks.
 -------------------------------------------------------------------------------
 
+simulateSpectrum.py
+Read in a sparky peaklist file, and output a scatterplot showing
+peak positions, with the area of each marker proportional to the
+height of the peak.
+

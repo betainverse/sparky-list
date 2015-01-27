@@ -84,7 +84,7 @@ def main():
     pylab.bar(xlist,ylist)
     pylab.plot(xlist,thresh,'r')
     pylab.plot(xlist,thresh2,'r')
-    pylab.axis(xmin=min(xlist),xmax=max(xlist))
+    pylab.axis(xmin=min(xlist),xmax=max(xlist)+1)
     pylab.xlabel("Residue")
     pylab.ylabel("$\Delta\delta$(ppm)")
     ax = fig.gca()
