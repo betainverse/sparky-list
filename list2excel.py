@@ -1,4 +1,4 @@
-#!/nmr/programs/python/bin/python2.7
+#!/usr/bin/env python
 """
 list2excel.py reads a sparky peaklist and reformats it from
 a whitespace-delimted file to a CSV file. It also splits the
@@ -41,7 +41,8 @@ def main():
     args = parser.parse_args()
     infile = args.infile
     outfile = args.outfile
-    if args.exclude:
+    exclude = args.exclude
+    if exclude:
         exclude = [str(x) for x in args.exclude]
     keep = args.keep
 
